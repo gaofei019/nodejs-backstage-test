@@ -14,13 +14,11 @@ const ejs = require('ejs');
 
 //创建服务器
 var server = express();
-server.listen(8083);
+server.listen(8081);
 
 //解析请求数据
 
-server.use(bodyParser({
-    extended:false
-}));
+server.use(bodyParser.urlencoded({extended:false}));
 server.use(multerObj.any());
 
 //设置cookie，session
